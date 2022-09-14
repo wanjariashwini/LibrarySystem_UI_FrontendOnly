@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<title>User Manage</title>
+</head>
+<body>
+	<section class="admin-tabs-section">
+		<div class="admin-tab-nav-bar">
+			<div>
+				<a href="#booklist" data-tab="booklist" class="b-nav-tab active">All Book List</a>
+			</div>
+			<div>
+				<a href="#searchbook" data-tab="searchbook" class="b-nav-tab">Search Book</a>	
+			</div>
+			<div>
+				<a href="#issuebook" data-tab="issuebook" class="b-nav-tab">Issue Book</a>	
+			</div>
+			<div>
+				<a href="#returnbook" data-tab="returnbook" class="b-nav-tab">Return Book</a>	
+			</div>
+			<div>
+				<a href="#bookstatus" data-tab="bookstatus" class="b-nav-tab">Issue Book Status</a>	
+			</div>
+			<div class="logOutBtn">
+				<a href="index.html">Log Out</a>	
+			</div>	
+		</div>
+			<div id="booklist" class="b-tab">
+				<table>
+				  <tr>
+				    <th>Book Id</th>
+				    <th>Title</th>
+				    <th>Author Name</th>
+				    <th>Quantity</th>
+				    <th>Cost</th>
+				  </tr>
+
+				  <tr>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				  </tr>
+				   <tr>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				  </tr>
+				   <tr>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				  </tr>
+				   <tr>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				  </tr>
+				   <tr>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				  </tr>
+				</table>
+			</div>
+			<div id="searchbook" class="b-tab">
+				<form action="#" method="POST">
+					<label>Book Id</label>
+					<input type="text" name="bookId" id="bookId" placeholder="Search Book Id">
+					<div class="getBookBtn">
+						<button>Search</button>
+					</div>
+				</form>
+			</div>
+            <div id="issuebook" class="b-tab">
+				<form action="#" method="POST">
+					<label>Book Id</label>
+					<input type="text" name="bookId" id="bookId" placeholder="Enter Book Id">
+					<div class="getBookBtn">
+						<button>issue</button>
+					</div>
+				</form>
+			</div>
+            <div id="returnbook" class="b-tab">
+				<form action="#" method="POST">
+					<label>Book Id</label>
+					<input type="text" name="bookId" id="bookId" placeholder="Enter Book Id">
+					<div class="getBookBtn">
+						<button>return</button>
+					</div>
+				</form>
+			</div>
+            <div id="bookstatus" class="b-tab">
+				<table>
+				  <tr>
+				    <th>Book Id</th>
+				    <th>Issued date</th>
+				    <th>Due date</th>
+				    <th>Return date</th>
+				    <th>Fine</th>
+				  </tr>
+
+				  <tr>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				  </tr>
+				   <tr>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				  </tr>
+				   <tr>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				  </tr>
+				   <tr>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				  </tr>
+				   <tr>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				    <td>Demmy</td>
+				  </tr>
+				</table>
+			</div>
+		
+	</section>
+
+
+<script>
+function Tabs() {
+  var bindAll = function() {
+    var menuElements = document.querySelectorAll('[data-tab]');
+    for(var i = 0; i < menuElements.length ; i++) {
+      menuElements[i].addEventListener('click', change, false);
+    }
+  }
+
+  var clear = function() {
+    var menuElements = document.querySelectorAll('[data-tab]');
+    for(var i = 0; i < menuElements.length ; i++) {
+      menuElements[i].classList.remove('active');
+      var id = menuElements[i].getAttribute('data-tab');
+      document.getElementById(id).classList.remove('active');
+    }
+  }
+
+  var change = function(e) {
+    clear();
+    e.target.classList.add('active');
+    var id = e.currentTarget.getAttribute('data-tab');
+    document.getElementById(id).classList.add('active');
+  }
+
+  bindAll();
+}
+
+var connectTabs = new Tabs();
+
+</script>
+</body>
+</html>
